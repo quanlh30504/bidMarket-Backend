@@ -19,3 +19,4 @@ spring:
                 jww:
                     issuer-uri: http://localhost:9090/realms/oauthrealm
 
+message: "hello"
