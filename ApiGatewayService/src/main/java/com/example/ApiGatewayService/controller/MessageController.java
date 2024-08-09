@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class MessageController {
     @GetMapping("/users")
-    @PreAuthorize("hasRole('api_user')")
+    @PreAuthorize("hasRole('user')")
     public String getMessage(){
         return "Get message successfully";
     }
