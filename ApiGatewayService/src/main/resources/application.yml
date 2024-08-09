@@ -5,17 +5,29 @@ spring:
         name: API-GATEWAY
     security:
         oauth2:
-            client:
-                provider:
-                    keycloak:
-                        issuer-uri: http://localhost:9090/realms/oauthrealm
-            
-                registration:
-                    keycloak:
-                        client-id: api-gateway
-                        authorization-grant-type: authorization_code
-                        scope: openid
-            resouceserver:
-                jww:
+#            client:
+#                provider:
+#                    keycloak:
+#                        issuer-uri: http://localhost:9090/realms/oauthrealm
+#                        user-name-attribute: preferred_username
+#
+#
+#                registration:
+#                    keycloak:
+#                        client-id: api-gateway
+#                        authorization-grant-type: authorization_code
+#                        scope: openid
+            resourceserver:
+                jwt:
                     issuer-uri: http://localhost:9090/realms/oauthrealm
+
+
+
+
+
+jwt:
+    auth:
+        converter:
+            resource-id: api-gateway
+            principle-attribute: preferred_username
 
